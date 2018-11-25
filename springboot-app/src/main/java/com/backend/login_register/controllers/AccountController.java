@@ -7,9 +7,15 @@ import com.backend.login_register.repositories.AccountRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
+
+@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 public class AccountController  {
 
@@ -34,5 +40,10 @@ public class AccountController  {
         } else {
             return ResponseEntity.ok(modelMapper.map(foundAccount, AccountOutDto.class));
         }
+    }
+
+    @GetMapping("/accounts")
+    public ResponseEntity<List<Account>> GetAllAccounts() {
+        return ResponseEntity.ok(accountRepository.findAll());
     }
 }
