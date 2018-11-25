@@ -1,0 +1,28 @@
+<form>
+  <div class="field">
+    <label class="label">Username</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Username" [(ngModel)]="username" name="username">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="password" placeholder="Password" [(ngModel)]="password" name="password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </div>
+  </div>
+  <div class="control">
+    <button class="button is-link" (click)="login(); false">Zaloguj</button>
+  </div>
+</form>
+
+<div *ngIf="isInfo">
+  <p class="help">{{ info }}</p>
+</div>
