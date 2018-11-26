@@ -1,0 +1,12 @@
+version: '3'
+services:
+  springboot:
+    build: ./springboot-app
+    ports:
+    - 8080:8080
+  angular-app:
+    build: ./angular-app
+    ports:
+    - 4200:4200
+    depends_on:
+    - springboot
