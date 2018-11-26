@@ -1,6 +1,6 @@
 # SerwisySieciowe
 
-Aplikacje można zbudować na dwa sposoby.
+Aplikacje można uruchomić na dwa sposoby.
 
 1. Sposób 1
 	* Zainstaluj JDK8, Maven oraz Node (najlepiej 10.13).
